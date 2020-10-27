@@ -62,8 +62,6 @@ export declare const errorΔ: BettererLogger;
 
 export declare const infoΔ: BettererLogger;
 
-export declare function logoΔ(): void;
-
 export declare function muteΔ(): void;
 
 export declare function overwriteΔ(content: string): BettererLoggerOverwriteDone;

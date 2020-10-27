@@ -18,7 +18,7 @@ export const BettererTask: FC<BettererTaskProps> = function BettererTask({ conte
   const [logMessages, setLogMessages] = useState<BettererTaskStatusMessages>([]);
 
   useEffect(() => {
-    (async () => {
+    void (async () => {
       let statusMessages: BettererTaskStatusMessages = [];
       dispatch({ type: 'start' });
       try {

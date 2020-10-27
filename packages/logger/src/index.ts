@@ -1,5 +1,6 @@
-export { brΔ, codeΔ, errorΔ, infoΔ, logoΔ, overwriteΔ, successΔ, warnΔ, unmuteΔ, muteΔ, diffΔ } from './logger';
+export { brΔ, codeΔ, errorΔ, infoΔ, overwriteΔ, successΔ, warnΔ, unmuteΔ, muteΔ, diffΔ } from './logger';
 export {
+  BettererLogo,
   BettererTask,
   BettererTaskColour,
   BettererTaskContext,
@@ -11,7 +12,7 @@ export {
   BettererTaskLogger,
   BettererTasks,
   BettererTasksProps
-} from './tasks/public';
+} from './components/public';
 export {
   BettererLogger,
   BettererLoggerCodeInfo,
