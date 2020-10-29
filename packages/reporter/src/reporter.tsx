@@ -19,7 +19,7 @@ import {
   testExpiredΔ,
   testFailedΔ,
   testNewΔ,
-  // testRunningΔ,
+  testRunningΔ,
   testSameΔ,
   testUpdatedΔ,
   testWorseΔ
@@ -59,40 +59,17 @@ export const defaultReporter: BettererReporter = {
     let runContexts: Array<BettererTaskContext> = [];
     const runStartRendered = new Promise((resolve) => {
       runContexts = runs.map((run) => {
-        let runResolve: BettererRunTaskUpdate['done'] | null;
-        let runReject: BettererRunTaskUpdate['error'] | null;
-        let runLogger: BettererTaskLogger | null;
-
-        runTaskUpdates.set(run, {
-          done(update: string): void {
-            assert(runResolve);
-            runResolve(update);
-          },
-          error(error: BettererError): void {
-            assert(runReject);
-            runReject(error);
-          },
-          info(update: string): void {
-            assert(runLogger);
-            runLogger.info(update);
-          },
-          status(update: string): void {
-            assert(runLogger);
-            runLogger.status(update);
-          },
-          warn(update: string): void {
-            assert(runLogger);
-            runLogger.warn(update);
-          }
-        });
-
         return {
           name: run.name,
           run(logger: BettererTaskLogger) {
-            runLogger = logger;
             const running = new Promise<string>((resolve, reject) => {
-              runResolve = resolve;
-              runReject = reject;
+              runTaskUpdates.set(run, {
+                done: resolve,
+                error: reject,
+                info: logger.info.bind(logger),
+                status: logger.status.bind(logger),
+                warn: logger.warn.bind(logger)
+              });
             });
             resolve();
             return running;
@@ -112,12 +89,12 @@ export const defaultReporter: BettererReporter = {
   runStart(run: BettererRun): void {
     const update = runTaskUpdates.get(run);
     assert(update);
-    const { warn } = update;
+    const { warn, status } = update;
     const name = quoteΔ(run.name);
     if (run.isExpired) {
       warn(testExpiredΔ(name));
     }
-    // status(testRunningΔ(name));
+    status(testRunningΔ(name));
   },
   runEnd(run: BettererRun): void {
     const update = runTaskUpdates.get(run);

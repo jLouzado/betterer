@@ -11,7 +11,8 @@ export {
   BettererTaskUpdate,
   BettererTaskLogger,
   BettererTasks,
-  BettererTasksProps
+  BettererTasksProps,
+  BettererTasksState
 } from './components/public';
 export {
   BettererLogger,

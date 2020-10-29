@@ -9,6 +9,7 @@ export {
   BettererTaskStatusMessages,
   BettererTaskUpdate,
   BettererTasks,
-  BettererTasksProps
+  BettererTasksProps,
+  BettererTasksState
 } from './tasks/public';
 export { BettererLogo } from './logo';

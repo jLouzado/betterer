@@ -31,7 +31,7 @@ export const BettererTask: FC<BettererTaskProps> = function BettererTask({ conte
             setLogMessages(statusMessages);
           },
           info(status: string) {
-            statusMessages = [...statusMessages, ['💬', 'gray', status]];
+            statusMessages = [...statusMessages, ['💭', 'gray', status]];
             setLogMessages(statusMessages);
           },
           warn(status: string) {

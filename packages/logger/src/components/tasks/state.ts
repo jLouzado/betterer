@@ -1,6 +1,6 @@
 import { createContext, Dispatch } from 'react';
 
-export type TasksState = {
+export type BettererTasksState = {
   running: number;
   done: number;
   error: number;
@@ -12,7 +12,7 @@ export type TasksAction = {
 
 export type BettererTasksContextType = Dispatch<TasksAction>;
 
-export const INITIAL_STATE: TasksState = {
+export const INITIAL_STATE: BettererTasksState = {
   running: 0,
   done: 0,
   error: 0
@@ -20,7 +20,7 @@ export const INITIAL_STATE: TasksState = {
 
 export const BettererTasksContext = createContext<BettererTasksContextType>(() => void 0);
 
-export function reducer(state: TasksState, action: TasksAction): TasksState {
+export function reducer(state: BettererTasksState, action: TasksAction): BettererTasksState {
   switch (action.type) {
     case 'start':
       return { ...state, running: state.running + 1 };

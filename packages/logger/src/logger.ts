@@ -10,11 +10,11 @@ import { BettererLogger, BettererLoggerCodeInfo, BettererLoggerMessages, Bettere
 const ERROR_BLOCK = chalk.bgRed('  ');
 const IS_JS_REGEXP = /.t|jsx?$/;
 export const LOGO = `
-   \\ | /     _          _   _                     
- '-.ooo.-'  | |__   ___| |_| |_ ___ _ __ ___ _ __ 
----ooooo--- | '_ \\ / _ \\ __| __/ _ \\ '__/ _ \\ '__|
- .-'ooo'-.  | |_) |  __/ |_| ||  __/ | |  __/ |   
-   / | \\    |_.__/ \\___|\\__|\\__\\___|_|  \\___|_|   
+   \\ | /     _         _   _                     
+ '-.ooo.-'  | |__  ___| |_| |_ ___ _ __ ___ _ __ 
+---ooooo--- | '_ \\/ _ \\ __| __/ _ \\ '__/ _ \\ '__|
+ .-'ooo'-.  | |_)|  __/ |_| ||  __/ | |  __/ |   
+   / | \\    |_.__/\\___|\\__|\\__\\___|_|  \\___|_|   
  `;
 const NEW_LINE = '\n';
 
