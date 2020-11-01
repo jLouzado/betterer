@@ -5,7 +5,7 @@ import {
   BettererRun,
   BettererRuns
 } from '@betterer/betterer';
-import { BettererError, registerError } from '@betterer/errors';
+import { BettererError } from '@betterer/errors';
 import { BettererTaskContext, BettererTaskLogger } from '@betterer/logger';
 import assert from 'assert';
 import React from 'react';
@@ -108,7 +108,7 @@ export const defaultReporter: BettererReporter = {
       return done(testBetterΔ(name));
     }
     if (run.isFailed) {
-      return error(registerError(() => testFailedΔ(name))());
+      return error(new BettererError(testFailedΔ(name)));
     }
     if (run.isNew) {
       return done(testNewΔ(name));
@@ -117,12 +117,12 @@ export const defaultReporter: BettererReporter = {
       return done(testSameΔ(name));
     }
     if (run.isUpdated) {
-      return done(testUpdatedΔ(name));
       // run.diff.log();
+      return done(testUpdatedΔ(name));
     }
     if (run.isWorse) {
-      return error(registerError(() => testWorseΔ(name))());
       // run.diff.log();
+      return error(new BettererError(testWorseΔ(name)));
     }
   },
   runError(run: BettererRun, error: BettererError) {
