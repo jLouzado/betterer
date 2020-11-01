@@ -1,7 +1,7 @@
 import { BettererError } from '@betterer/errors';
 import assert from 'assert';
 
-import { BettererMultiReporterΩ } from '../reporters';
+import { BettererReporterΩ } from '../reporters';
 import { BettererResult } from '../results';
 import { BettererDiff, BettererTestConfig } from '../test';
 import { BettererFilePaths } from '../watcher';
@@ -29,7 +29,7 @@ export class BettererRunΩ implements BettererRun {
   private _isRan = false;
 
   constructor(
-    private readonly _reporter: BettererMultiReporterΩ,
+    private readonly _reporter: BettererReporterΩ,
     private readonly _name: string,
     private readonly _test: BettererTestConfig,
     private readonly _expected: BettererResult,

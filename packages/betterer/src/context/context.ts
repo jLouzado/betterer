@@ -2,7 +2,7 @@ import { BettererError } from '@betterer/errors';
 import assert from 'assert';
 
 import { BettererConfig } from '../config';
-import { BettererMultiReporterΩ } from '../reporters';
+import { BettererReporterΩ } from '../reporters';
 import { requireUncached } from '../require';
 import { BettererResults, BettererResultΩ } from '../results';
 import {
@@ -28,7 +28,7 @@ export class BettererContextΩ implements BettererContext {
 
   private _running: Promise<void> | null = null;
 
-  constructor(public readonly config: BettererConfig, private _reporter: BettererMultiReporterΩ) {
+  constructor(public readonly config: BettererConfig, private _reporter: BettererReporterΩ) {
     this._results = new BettererResults(this.config.resultsPath);
   }
 
