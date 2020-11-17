@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import { Box, Text } from 'ink';
 
-import { LOGO } from '../logger';
+import { LOGO } from '@betterer/logger/dist/console-logger';
 
 export const BettererLogo: FC = function BettererLogo() {
   return (

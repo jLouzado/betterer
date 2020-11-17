@@ -1,5 +1,5 @@
 import { BettererFilePaths, BettererReporter, BettererRun, BettererRuns } from '@betterer/betterer';
-import { infoΔ, overwriteΔ } from '@betterer/logger';
+import { infoΔ } from '@betterer/logger';
 import {
   quoteΔ,
   testBetterΔ,
@@ -12,6 +12,7 @@ import {
   testUpdatedΔ,
   testWorseΔ
 } from '@betterer/reporter';
+import logUpdate from 'log-update';
 
 import { filesChecked, filesChecking, watchEnd, watchStart } from './messages';
 
@@ -70,4 +71,17 @@ function statusMessage(run: BettererRun): string {
     return testWorseΔ(name);
   }
   throw new Error();
+}
+
+const LOGO = `
+   \\ | /     _         _   _                     
+ '-.ooo.-'  | |__  ___| |_| |_ ___ _ __ ___ _ __ 
+---ooooo--- | '_ \\/ _ \\ __| __/ _ \\ '__/ _ \\ '__|
+ .-'ooo'-.  | |_)|  __/ |_| ||  __/ | |  __/ |   
+   / | \\    |_.__/\\___|\\__|\\__\\___|_|  \\___|_|   
+ `;
+
+function overwriteΔ(content: string): typeof logUpdate['done'] {
+  logUpdate(`${LOGO}${'\n'}${content}`);
+  return logUpdate.done.bind(logUpdate);
 }

@@ -1,4 +1,4 @@
-export { brΔ, codeΔ, errorΔ, infoΔ, overwriteΔ, successΔ, warnΔ, unmuteΔ, muteΔ, diffΔ } from './logger';
+export { BettererConsoleLogger } from './console-logger';
 export {
   BettererLogo,
   BettererTask,
@@ -16,8 +16,8 @@ export {
 } from './components/public';
 export {
   BettererLogger,
+  BettererLogCodeFunction,
+  BettererLogFunction,
   BettererLoggerCodeInfo,
-  BettererLoggerMessages,
-  BettererLoggerOverwriteDone,
-  BettererLoggerDiffOptions
+  BettererLoggerMessages
 } from './types';

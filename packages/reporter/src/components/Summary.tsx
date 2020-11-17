@@ -61,9 +61,7 @@ export const Summary: FC<SummaryProps> = function Summary({ error, children }) {
 
   //   if (summary.hasDiff) {
   //     errorΔ(unexpectedDiffΔ());
-  //     brΔ();
   //     diffΔ(summary.expected, summary.result);
-  //     brΔ();
   //   }
 
   return (

@@ -5,6 +5,7 @@ import { BettererConfig } from '../config';
 import { BettererReporterΩ } from '../reporters';
 import { requireUncached } from '../require';
 import { BettererResults, BettererResultΩ } from '../results';
+import { defer, Defer } from '../utils';
 import {
   BettererTest,
   BettererTestBase,
@@ -27,21 +28,29 @@ export class BettererContextΩ implements BettererContext {
   private _tests: BettererTestMap = {};
 
   private _running: Promise<void> | null = null;
+  private _lifecycle: Defer<BettererSummary>;
 
   constructor(public readonly config: BettererConfig, private _reporter: BettererReporterΩ) {
     this._results = new BettererResults(this.config.resultsPath);
+    this._lifecycle = defer();
   }
 
-  public async setup(): Promise<void> {
+  public get lifecycle(): Promise<BettererSummary> {
+    return this._lifecycle.promise;
+  }
+
+  public async start(): Promise<void> {
+    await this._reporter.contextStart(this, this.lifecycle);
+  }
+
+  public async run(runner: BettererRunner, filePaths: BettererFilePaths = []): Promise<BettererSummary> {
     if (this._running) {
       await this._running;
     }
 
     this._tests = this._initTests();
     this._initFilters();
-  }
 
-  public async run(runner: BettererRunner, filePaths: BettererFilePaths = []): Promise<BettererSummary> {
     const runs = await Promise.all(
       Object.keys(this._tests)
         .filter((name) => {
@@ -71,7 +80,13 @@ export class BettererContextΩ implements BettererContext {
 
   public async end(): Promise<void> {
     assert(this._summary);
+    this._lifecycle.resolve(this._summary);
     await this._reporter.contextEnd(this, this._summary);
+  }
+
+  public async error(error: BettererError): Promise<void> {
+    this._lifecycle.reject(error);
+    await this._reporter.contextError(this, error);
   }
 
   public async save(): Promise<void> {

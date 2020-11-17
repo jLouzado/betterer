@@ -9,8 +9,6 @@ export declare type BettererLoggerCodeInfo = {
     length: number;
 };
 
-export declare type BettererLoggerDiffOptions = DiffOptions;
-
 export declare type BettererLoggerMessages = ReadonlyArray<string>;
 
 export declare type BettererLoggerOverwriteDone = typeof logUpdate['done'];
@@ -52,19 +50,13 @@ export declare type BettererTaskStatusMessages = ReadonlyArray<BettererTaskStatu
 
 export declare type BettererTaskUpdate = (status: string) => void;
 
-export declare function brΔ(): void;
-
 export declare function codeΔ(codeInfo: BettererLoggerCodeInfo): void;
-
-export declare function diffΔ(expected: unknown, result: unknown, options?: DiffOptions): void;
 
 export declare const errorΔ: BettererLogger;
 
 export declare const infoΔ: BettererLogger;
 
 export declare function muteΔ(): void;
-
-export declare function overwriteΔ(content: string): BettererLoggerOverwriteDone;
 
 export declare const successΔ: BettererLogger;
 
