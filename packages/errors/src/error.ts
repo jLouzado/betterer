@@ -1,9 +1,9 @@
 import { BettererErrorDetails, ErrorLike } from './types';
 
-const ERRORS: Array<BettererError> = [];
-
 export class BettererError extends Error {
   public details: BettererErrorDetails;
+
+  public isBettererError = true;
 
   constructor(message: string, ...details: BettererErrorDetails) {
     super(message);
@@ -12,10 +12,13 @@ export class BettererError extends Error {
     Object.setPrototypeOf(this, new.target.prototype);
 
     this.details = details;
-    ERRORS.push(this);
   }
 }
 
-export function isBettererError(err: ErrorLike | Error | BettererError): err is BettererError {
-  return !!ERRORS.includes(err as BettererError);
+export function isBettererError(err: unknown): err is BettererError {
+  return !!(err as BettererError).isBettererError;
+}
+
+export function isErrorLike(err: unknown): err is ErrorLike {
+  return (err as ErrorLike).message != null && (err as ErrorLike).stack !== null;
 }

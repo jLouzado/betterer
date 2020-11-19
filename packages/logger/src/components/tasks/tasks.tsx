@@ -3,7 +3,7 @@ import { Box, useApp } from 'ink';
 
 import { INITIAL_STATE, reducer, BettererTasksContext, BettererTasksState } from './state';
 import { BettererTaskStatus } from './status';
-import { BettererTaskStatusMessage } from './types';
+import { BettererTaskLog } from './types';
 
 export type BettererTasksProps = {
   name: string;
@@ -13,12 +13,12 @@ export type BettererTasksProps = {
 export const BettererTasks: FC<BettererTasksProps> = function BettererTask({ children, name, statusMessage }) {
   const app = useApp();
   const [state, dispatch] = useReducer(reducer, INITIAL_STATE);
-  const [status, setStatus] = useState<BettererTaskStatusMessage | null>(null);
+  const [status, setStatus] = useState<BettererTaskLog | null>(null);
 
   useEffect(() => {
     const { done, error, running } = state;
     const result = statusMessage(state);
-    let status: BettererTaskStatusMessage = ['🌟', 'whiteBright', result];
+    let status: BettererTaskLog = ['🌟', 'whiteBright', result];
     if (error > 0) {
       status = ['💥', 'redBright', result];
     } else if (running === 0) {

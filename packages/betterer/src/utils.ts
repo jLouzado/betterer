@@ -48,6 +48,9 @@ export function defer<T>(): Defer<T> {
     resolve = res;
     reject = rej;
   });
+  promise.catch(() => {
+    return;
+  });
   assert(resolve);
   assert(reject);
   return { promise, resolve, reject };

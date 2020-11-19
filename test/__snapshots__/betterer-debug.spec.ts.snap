@@ -18,10 +18,6 @@ Array [
 ",
   "▸ createConfig args: 
 ",
-  "▸▸ unmuteΔ args: 
-",
-  "▸▸ unmuteΔ time: 0ms return: 
-",
   "▸ createConfig time: 0ms return: 
 ",
   "▸ registerExtensions args: 
@@ -36,68 +32,70 @@ Array [
 ",
   "▸ BettererContextΩ time: 0ms return: 
 ",
-  "▸ BettererReporterΩ.contextStart args: 
+  "▸ BettererContextΩ.start args: 
 ",
-  "▸▸ logoΔ args: 
+  "▸▸ BettererReporterΩ.contextStart args: 
+",
+  "▸▸▸ BettererLogo args: 
+",
+  "▸▸▸ BettererLogo time: 0ms return: 
 ",
   "
-   / | /     _          _   _                     
- '-.ooo.-'  | |__   ___| |_| |_ ___ _ __ ___ _ __ 
----ooooo--- | '_ / / _ / __| __/ _ / '__/ _ / '__|
- .-'ooo'-.  | |_) |  __/ |_| ||  __/ | |  __/ |   
-   / | /    |_.__/ /___|/__|/__/___|_|  /___|_|   
- ",
-  "▸▸ logoΔ time: 0ms return: 
+   / | /     _         _   _                     
+ '-.ooo.-'  | |__  ___| |_| |_ ___ _ __ ___ _ __ 
+---ooooo--- | '_ // _ / __| __/ _ / '__/ _ / '__|
+ .-'ooo'-.  | |_)|  __/ |_| ||  __/ | |  __/ |   
+   / | /    |_.__//___|/__|/__/___|_|  /___|_|   
+ 
+
 ",
-  "▸ BettererReporterΩ.contextStart time: 0ms return: 
+  "▸▸ BettererReporterΩ.contextStart time: 0ms return: 
 ",
-  "▸ BettererContextΩ.setup args: 
-",
-  "▸▸ BettererContextΩ._initTests args: 
-",
-  "▸▸▸ BettererContextΩ._getTests args: 
-",
-  "▸▸▸▸ requireUncached args: 
-",
-  "▸▸▸▸ requireUncached time: 0ms return: 
-",
-  "▸▸▸▸ isBettererTest args: 
-",
-  "▸▸▸▸ isBettererTest time: 0ms return: 
-",
-  "▸▸▸▸ BettererTest args: 
-",
-  "▸▸▸▸▸ createTestConfig args: 
-",
-  "▸▸▸▸▸ createTestConfig time: 0ms return: 
-",
-  "▸▸▸▸ BettererTest time: 0ms return: 
-",
-  "▸▸▸▸ isBettererTest args: 
-",
-  "▸▸▸▸ isBettererTest time: 0ms return: 
-",
-  "▸▸▸▸ BettererTest args: 
-",
-  "▸▸▸▸▸ createTestConfig args: 
-",
-  "▸▸▸▸▸ createTestConfig time: 0ms return: 
-",
-  "▸▸▸▸ BettererTest time: 0ms return: 
-",
-  "▸▸▸ BettererContextΩ._getTests time: 0ms return: 
-",
-  "▸▸ BettererContextΩ._initTests time: 0ms return: 
-",
-  "▸▸ BettererContextΩ._initFilters args: 
-",
-  "▸▸ BettererContextΩ._initFilters time: 0ms return: 
-",
-  "▸ BettererContextΩ.setup time: 0ms return: 
+  "▸ BettererContextΩ.start time: 0ms return: 
 ",
   "▸ serial args: 
 ",
   "▸▸ BettererContextΩ.run args: 
+",
+  "▸▸▸ BettererContextΩ._initTests args: 
+",
+  "▸▸▸▸ BettererContextΩ._getTests args: 
+",
+  "▸▸▸▸▸ requireUncached args: 
+",
+  "▸▸▸▸▸ requireUncached time: 0ms return: 
+",
+  "▸▸▸▸▸ isBettererTest args: 
+",
+  "▸▸▸▸▸ isBettererTest time: 0ms return: 
+",
+  "▸▸▸▸▸ BettererTest args: 
+",
+  "▸▸▸▸▸▸ createTestConfig args: 
+",
+  "▸▸▸▸▸▸ createTestConfig time: 0ms return: 
+",
+  "▸▸▸▸▸ BettererTest time: 0ms return: 
+",
+  "▸▸▸▸▸ isBettererTest args: 
+",
+  "▸▸▸▸▸ isBettererTest time: 0ms return: 
+",
+  "▸▸▸▸▸ BettererTest args: 
+",
+  "▸▸▸▸▸▸ createTestConfig args: 
+",
+  "▸▸▸▸▸▸ createTestConfig time: 0ms return: 
+",
+  "▸▸▸▸▸ BettererTest time: 0ms return: 
+",
+  "▸▸▸▸ BettererContextΩ._getTests time: 0ms return: 
+",
+  "▸▸▸ BettererContextΩ._initTests time: 0ms return: 
+",
+  "▸▸▸ BettererContextΩ._initFilters args: 
+",
+  "▸▸▸ BettererContextΩ._initFilters time: 0ms return: 
 ",
   "▸▸▸ BettererResults.getExpectedResult args: 
 ",
@@ -157,6 +155,26 @@ Array [
 ",
   "▸▸▸ BettererReporterΩ.runsStart args: 
 ",
+  "▸▸▸▸ BettererLogo args: 
+",
+  "▸▸▸▸ BettererLogo time: 0ms return: 
+",
+  "▸▸▸▸ BettererTasks args: 
+",
+  "▸▸▸▸ BettererTasks time: 0ms return: 
+",
+  "▸▸▸▸ BettererTaskStatus args: 
+",
+  "▸▸▸▸ BettererTaskStatus time: 0ms return: 
+",
+  "▸▸▸▸ BettererTask args: 
+",
+  "▸▸▸▸ BettererTask time: 0ms return: 
+",
+  "▸▸▸▸ BettererTask args: 
+",
+  "▸▸▸▸ BettererTask time: 0ms return: 
+",
   "▸▸▸ BettererReporterΩ.runsStart time: 0ms return: 
 ",
   "▸▸▸ runner args: 
@@ -164,12 +182,6 @@ Array [
   "▸▸▸▸ BettererRunΩ.start args: 
 ",
   "▸▸▸▸▸ BettererReporterΩ.runStart args: 
-",
-  "▸▸▸▸▸▸ infoΔ args: 
-",
-  " ☀️  betterer  info  💬  - ",
-  "running \\"should shrink\\"!",
-  "▸▸▸▸▸▸ infoΔ time: 0ms return: 
 ",
   "▸▸▸▸▸ BettererReporterΩ.runStart time: 0ms return: 
 ",
@@ -194,12 +206,6 @@ Array [
   "▸▸▸▸ BettererRunΩ.end args: 
 ",
   "▸▸▸▸▸ BettererReporterΩ.runEnd args: 
-",
-  "▸▸▸▸▸▸ successΔ args: 
-",
-  " ☀️  betterer  succ  ✅  - ",
-  "\\"should shrink\\" got checked for the first time! 🎉",
-  "▸▸▸▸▸▸ successΔ time: 0ms return: 
 ",
   "▸▸▸▸▸ BettererReporterΩ.runEnd time: 0ms return: 
 ",
@@ -209,12 +215,6 @@ Array [
 ",
   "▸▸▸▸▸ BettererReporterΩ.runStart args: 
 ",
-  "▸▸▸▸▸▸ infoΔ args: 
-",
-  " ☀️  betterer  info  💬  - ",
-  "running \\"should grow\\"!",
-  "▸▸▸▸▸▸ infoΔ time: 0ms return: 
-",
   "▸▸▸▸▸ BettererReporterΩ.runStart time: 0ms return: 
 ",
   "▸▸▸▸ BettererRunΩ.start time: 0ms return: 
@@ -238,12 +238,6 @@ Array [
   "▸▸▸▸ BettererRunΩ.end args: 
 ",
   "▸▸▸▸▸ BettererReporterΩ.runEnd args: 
-",
-  "▸▸▸▸▸▸ successΔ args: 
-",
-  " ☀️  betterer  succ  ✅  - ",
-  "\\"should grow\\" got checked for the first time! 🎉",
-  "▸▸▸▸▸▸ successΔ time: 0ms return: 
 ",
   "▸▸▸▸▸ BettererReporterΩ.runEnd time: 0ms return: 
 ",
@@ -258,6 +252,118 @@ Array [
   "▸▸▸ BettererResults.read args: 
 ",
   "▸▸▸▸ read args: 
+",
+  "▸▸▸▸▸ reducer args: 
+",
+  "▸▸▸▸▸ reducer time: 0ms return: 
+",
+  "▸▸▸▸▸ BettererTasks args: 
+",
+  "▸▸▸▸▸▸ reducer args: 
+",
+  "▸▸▸▸▸▸ reducer time: 0ms return: 
+",
+  "▸▸▸▸▸ BettererTasks time: 0ms return: 
+",
+  "▸▸▸▸▸ BettererTaskStatus args: 
+",
+  "▸▸▸▸▸ BettererTaskStatus time: 0ms return: 
+",
+  "▸▸▸▸▸ BettererTask args: 
+",
+  "▸▸▸▸▸ BettererTask time: 0ms return: 
+",
+  "▸▸▸▸▸ BettererTaskStatus args: 
+",
+  "▸▸▸▸▸ BettererTaskStatus time: 0ms return: 
+",
+  "▸▸▸▸▸ BettererTask args: 
+",
+  "▸▸▸▸▸ BettererTask time: 0ms return: 
+",
+  "▸▸▸▸▸ BettererTaskStatus args: 
+",
+  "▸▸▸▸▸ BettererTaskStatus time: 0ms return: 
+",
+  "▸▸▸▸▸ BettererTasks args: 
+",
+  "▸▸▸▸▸ BettererTasks time: 0ms return: 
+",
+  "▸▸▸▸▸ BettererTaskStatus args: 
+",
+  "▸▸▸▸▸ BettererTaskStatus time: 0ms return: 
+",
+  "▸▸▸▸▸ BettererTask args: 
+",
+  "▸▸▸▸▸ BettererTask time: 0ms return: 
+",
+  "▸▸▸▸▸ BettererTaskStatus args: 
+",
+  "▸▸▸▸▸ BettererTaskStatus time: 0ms return: 
+",
+  "▸▸▸▸▸ reducer args: 
+",
+  "▸▸▸▸▸ reducer time: 0ms return: 
+",
+  "▸▸▸▸▸ BettererTasks args: 
+",
+  "▸▸▸▸▸ BettererTasks time: 0ms return: 
+",
+  "▸▸▸▸▸ BettererTaskStatus args: 
+",
+  "▸▸▸▸▸ BettererTaskStatus time: 0ms return: 
+",
+  "▸▸▸▸▸ BettererTasks args: 
+",
+  "▸▸▸▸▸ BettererTasks time: 0ms return: 
+",
+  "▸▸▸▸▸ BettererTaskStatus args: 
+",
+  "▸▸▸▸▸ BettererTaskStatus time: 0ms return: 
+",
+  "▸▸▸▸▸ BettererTask args: 
+",
+  "▸▸▸▸▸ BettererTask time: 0ms return: 
+",
+  "▸▸▸▸▸ BettererTaskStatus args: 
+",
+  "▸▸▸▸▸ BettererTaskStatus time: 0ms return: 
+",
+  "▸▸▸▸▸ BettererTask args: 
+",
+  "▸▸▸▸▸ BettererTask time: 0ms return: 
+",
+  "▸▸▸▸▸ BettererTaskStatus args: 
+",
+  "▸▸▸▸▸ BettererTaskStatus time: 0ms return: 
+",
+  "▸▸▸▸▸ reducer args: 
+",
+  "▸▸▸▸▸ reducer time: 0ms return: 
+",
+  "▸▸▸▸▸ BettererTasks args: 
+",
+  "▸▸▸▸▸ BettererTasks time: 0ms return: 
+",
+  "▸▸▸▸▸ BettererTaskStatus args: 
+",
+  "▸▸▸▸▸ BettererTaskStatus time: 0ms return: 
+",
+  "▸▸▸▸▸ BettererTasks args: 
+",
+  "▸▸▸▸▸ BettererTasks time: 0ms return: 
+",
+  "▸▸▸▸▸ BettererTaskStatus args: 
+",
+  "▸▸▸▸▸ BettererTaskStatus time: 0ms return: 
+",
+  "▸▸▸▸▸ BettererTask args: 
+",
+  "▸▸▸▸▸ BettererTask time: 0ms return: 
+",
+  "▸▸▸▸▸ BettererTaskStatus args: 
+",
+  "▸▸▸▸▸ BettererTaskStatus time: 0ms return: 
 ",
   "▸▸▸▸ read time: 0ms return: 
 ",
@@ -295,18 +401,6 @@ Array [
 ",
   "▸▸ BettererReporterΩ.contextEnd args: 
 ",
-  "▸▸▸ infoΔ args: 
-",
-  " ☀️  betterer  info  💬  - ",
-  "2 tests got checked. 🤔",
-  "▸▸▸ infoΔ time: 0ms return: 
-",
-  "▸▸▸ infoΔ args: 
-",
-  " ☀️  betterer  info  💬  - ",
-  "2 tests got checked for the first time! 🎉",
-  "▸▸▸ infoΔ time: 0ms return: 
-",
   "▸▸ BettererReporterΩ.contextEnd time: 0ms return: 
 ",
   "▸ BettererContextΩ.end time: 0ms return: 
@@ -316,6 +410,11 @@ Array [
   "▸▸ BettererResults.write args: 
 ",
   "▸▸▸ write args: 
+",
+  "
+2 tests got checked. 🤔
+2 tests got checked for the first time! 🎉
+
 ",
   "▸▸▸ write time: 0ms return: 
 ",

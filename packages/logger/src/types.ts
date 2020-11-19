@@ -1,5 +1,5 @@
 export type BettererLoggerMessages = ReadonlyArray<string>;
-export type BettererLogFunction = (...messages: BettererLoggerMessages) => void;
+export type BettererLogMessage = (...messages: BettererLoggerMessages) => void;
 
 export type BettererLoggerCodeInfo = {
   message: string;
@@ -9,14 +9,14 @@ export type BettererLoggerCodeInfo = {
   column: number;
   length: number;
 };
-export type BettererLogCodeFunction = (codeInfo: BettererLoggerCodeInfo) => void;
+
+export type BettererLogCode = (codeInfo: BettererLoggerCodeInfo) => void;
 
 export type BettererLogger = {
-  code: BettererLogCodeFunction;
-  error: BettererLogFunction;
-  info: BettererLogFunction;
-  success: BettererLogFunction;
-  warn: BettererLogFunction;
-  unmute(): void;
-  mute(): void;
+  code: BettererLogCode;
+  debug: BettererLogMessage;
+  error: BettererLogMessage;
+  info: BettererLogMessage;
+  success: BettererLogMessage;
+  warn: BettererLogMessage;
 };

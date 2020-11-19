@@ -1,5 +1,6 @@
 export declare class BettererError extends Error {
     details: BettererErrorDetails;
+    isBettererError: boolean;
     constructor(message: string, ...details: BettererErrorDetails);
 }
 
@@ -11,5 +12,3 @@ export declare type ErrorLike = {
     message: string;
     stack: string;
 };
-
-export declare function logErrorΔ(err: ErrorLike | Error | BettererError): void;

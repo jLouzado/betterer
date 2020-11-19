@@ -2,7 +2,9 @@ import React, { FC } from 'react';
 
 import { BettererError } from '@betterer/errors';
 import { BettererLogo } from '@betterer/logger';
-import { Box, Text } from 'ink';
+import { Box } from 'ink';
+
+import { Error } from './Error';
 
 export type ReporterProps = {
   error?: BettererError;
@@ -10,14 +12,10 @@ export type ReporterProps = {
 
 export const Reporter: FC<ReporterProps> = function Reporter({ error, children }) {
   return (
-    <Box flexDirection="column">
+    <Box flexDirection="column" paddingBottom={1}>
       <BettererLogo></BettererLogo>
       {children}
-      {error && (
-        <Box>
-          <Text>{error.message}</Text>
-        </Box>
-      )}
+      {error && <Error error={error} />}
     </Box>
   );
 };

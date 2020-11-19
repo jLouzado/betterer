@@ -1,73 +1,75 @@
 import React, { FC } from 'react';
 
 import { BettererSummary } from '@betterer/betterer';
-import { BettererError } from '@betterer/errors';
-import { Box } from 'ink';
+import { diff } from '@betterer/logger';
+import { Box, Text } from 'ink';
+
+import {
+  testBetterΔ,
+  testCheckedΔ,
+  testCompleteΔ,
+  testExpiredΔ,
+  testFailedΔ,
+  testNewΔ,
+  testObsoleteΔ,
+  testSameΔ,
+  testSkippedΔ,
+  testUpdatedΔ,
+  testWorseΔ,
+  unexpectedDiffΔ,
+  updateInstructionsΔ
+} from '../messages';
+import { quoteΔ } from '../utils';
 
 export type SummaryProps = {
-  error?: BettererError;
-  summary?: BettererSummary;
+  summary: BettererSummary;
 };
 
-export const Summary: FC<SummaryProps> = function Summary({ error, children }) {
-  //   const better = summary.better.length;
-  //   const failed = summary.failed.length;
-  //   const ran = summary.ran.length;
-  //   const same = summary.same.length;
-  //   const skipped = summary.skipped.length;
-  //   const updated = summary.updated.length;
-  //   const worse = summary.worse.length;
-
-  //   const { completed, expired, obsolete } = summary;
-
-  //   infoΔ(testCheckedΔ(getTestsΔ(ran)));
-  //   if (expired) {
-  //     expired.forEach((run) => {
-  //       errorΔ(testExpiredΔ(quoteΔ(run.name)));
-  //     });
-  //   }
-  //   if (failed) {
-  //     errorΔ(testFailedΔ(getTestsΔ(failed)));
-  //   }
-  //   if (summary.new.length) {
-  //     infoΔ(testNewΔ(getTestsΔ(summary.new.length)));
-  //   }
-  //   if (obsolete) {
-  //     obsolete.forEach((runName) => {
-  //       errorΔ(testObsoleteΔ(quoteΔ(runName)));
-  //     });
-  //   }
-  //   if (better) {
-  //     successΔ(testBetterΔ(getTestsΔ(better)));
-  //   }
-  //   if (completed) {
-  //     completed.forEach((run) => {
-  //       successΔ(testCompleteΔ(quoteΔ(run.name)));
-  //     });
-  //   }
-  //   if (same) {
-  //     warnΔ(testSameΔ(getTestsΔ(same)));
-  //   }
-  //   if (skipped) {
-  //     warnΔ(testSkippedΔ(getTestsΔ(skipped)));
-  //   }
-  //   if (updated) {
-  //     infoΔ(testUpdatedΔ(getTestsΔ(updated)));
-  //   }
-  //   if (worse) {
-  //     errorΔ(testWorseΔ(getTestsΔ(worse)));
-  //     errorΔ(updateInstructionsΔ());
-  //   }
-
-  //   if (summary.hasDiff) {
-  //     errorΔ(unexpectedDiffΔ());
-  //     diffΔ(summary.expected, summary.result);
-  //   }
+export const Summary: FC<SummaryProps> = function Summary({ summary }) {
+  const better = summary.better.length;
+  const failed = summary.failed.length;
+  const neww = summary.new.length;
+  const ran = summary.ran.length;
+  const same = summary.same.length;
+  const skipped = summary.skipped.length;
+  const updated = summary.updated.length;
+  const worse = summary.worse.length;
+  const { completed, expired, obsolete } = summary;
 
   return (
-    <Box>
-      {children}
-      {error && <Box>{error.message}</Box>}
+    <Box flexDirection="column" paddingY={1}>
+      <Text color="gray">{testCheckedΔ(tests(ran))}</Text>
+      {expired.map((run) => {
+        <Text color="brightRed">{testExpiredΔ(quoteΔ(run.name))})</Text>;
+      })}
+      {failed ? <Text color="brightRed">{testFailedΔ(tests(failed))}</Text> : null}
+      {neww ? <Text color="gray">{testNewΔ(tests(neww))}</Text> : null}
+      {obsolete.map((runName) => {
+        <Text color="brightRed">{testObsoleteΔ(quoteΔ(runName))})</Text>;
+      })}
+      {better ? <Text color="greenBright">{testBetterΔ(tests(better))}</Text> : null}
+      {completed.map((run) => {
+        <Text color="greenBright">{testCompleteΔ(quoteΔ(run.name))})</Text>;
+      })}
+      {same ? <Text color="yellowBright">{testSameΔ(tests(same))}</Text> : null}
+      {skipped ? <Text color="yellowBright">{testSkippedΔ(tests(skipped))}</Text> : null}
+      {updated ? <Text color="gray">{testUpdatedΔ(tests(updated))}</Text> : null}
+      {worse ? (
+        <>
+          <Text color="red">{testWorseΔ(tests(worse))}</Text>
+          <Text>{updateInstructionsΔ()}</Text>
+        </>
+      ) : null}
+      {summary.hasDiff ? (
+        <>
+          <Text color="red">{unexpectedDiffΔ()}</Text>
+          <Text>{diff(summary.expected, summary.result)}</Text>{' '}
+        </>
+      ) : null}
     </Box>
   );
 };
+
+function tests(n: number): string {
+  return n === 1 ? `${n} test` : `${n} tests`;
+}

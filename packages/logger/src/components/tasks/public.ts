@@ -5,8 +5,8 @@ export {
   BettererTaskColour,
   BettererTaskContext,
   BettererTaskError,
-  BettererTaskStatusMessage,
-  BettererTaskStatusMessages,
+  BettererTaskLog,
+  BettererTaskLogs,
   BettererTaskUpdate,
   BettererTaskLogger
 } from './types';

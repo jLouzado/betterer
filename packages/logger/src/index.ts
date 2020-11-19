@@ -1,4 +1,6 @@
 export { BettererConsoleLogger } from './console-logger';
+export { code } from './code';
+export { diff } from './diff';
 export {
   BettererLogo,
   BettererTask,
@@ -6,8 +8,8 @@ export {
   BettererTaskContext,
   BettererTaskError,
   BettererTaskProps,
-  BettererTaskStatusMessage,
-  BettererTaskStatusMessages,
+  BettererTaskLog,
+  BettererTaskLogs,
   BettererTaskUpdate,
   BettererTaskLogger,
   BettererTasks,
@@ -16,8 +18,8 @@ export {
 } from './components/public';
 export {
   BettererLogger,
-  BettererLogCodeFunction,
-  BettererLogFunction,
+  BettererLogMessage,
+  BettererLogCode,
   BettererLoggerCodeInfo,
   BettererLoggerMessages
 } from './types';

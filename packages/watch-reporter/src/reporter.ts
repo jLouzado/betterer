@@ -1,5 +1,5 @@
 import { BettererFilePaths, BettererReporter, BettererRun, BettererRuns } from '@betterer/betterer';
-import { infoΔ } from '@betterer/logger';
+import { BettererConsoleLogger } from '@betterer/logger';
 import {
   quoteΔ,
   testBetterΔ,
@@ -15,13 +15,14 @@ import {
 import logUpdate from 'log-update';
 
 import { filesChecked, filesChecking, watchEnd, watchStart } from './messages';
+const logger = new BettererConsoleLogger();
 
 export const watchReporter: BettererReporter = {
   contextStart(): void {
-    infoΔ(watchStart());
+    logger.info(watchStart());
   },
   contextEnd(): void {
-    infoΔ(watchEnd());
+    logger.info(watchEnd());
   },
   runsStart(_: BettererRuns, files: BettererFilePaths): void {
     overwriteΔ(filesChecking(files.length));
