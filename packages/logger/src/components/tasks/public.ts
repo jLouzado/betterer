@@ -7,6 +7,6 @@ export {
   BettererTaskError,
   BettererTaskLog,
   BettererTaskLogs,
-  BettererTaskUpdate,
+  BettererTaskStatusUpdate,
   BettererTaskLogger
 } from './types';

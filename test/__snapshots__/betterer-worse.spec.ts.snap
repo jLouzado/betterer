@@ -40,12 +40,12 @@ Array [
  
 🎉 Betterer: 1 test done!
 ✅ tsquery no raw console.log: \\"tsquery no raw console.log\\" got force updated. 🆙
-   ▸ 1 existing issue in \\"<project>/fixtures/test-betterer-update/src/index.ts\\".
-   ▸ 1 new issue in \\"<project>/fixtures/test-betterer-update/src/index.ts\\":
-   ▸ TSQuery match
-   ▸   1 | console.log('foo');
-   ▸ > 2 | console.log('foo');
-   ▸     | ^^^^^^^^^^^
+  ▸ 1 existing issue in \\"<project>/fixtures/test-betterer-update/src/index.ts\\".
+  ▸ 1 new issue in \\"<project>/fixtures/test-betterer-update/src/index.ts\\":
+  ▸ TSQuery match
+  ▸   1 | console.log('foo');
+  ▸ > 2 | console.log('foo');
+  ▸     | ^^^^^^^^^^^
 
 ",
   "
@@ -138,19 +138,7 @@ Array [
  
 💥 Betterer: 2 tests errored!
 🔥 should shrink: \\"should shrink\\" got worse. 😔
-   ▸
-   ▸ Error: \\"should shrink\\" got worse. 😔
-   ▸     at <project>/packages/reporter/dist/components/Runs.js:1526:25
-   ▸     at step (<project>/node_modules/tslib/tslib.js:140:27)
-   ▸     at Object.next (<project>/node_modules/tslib/tslib.js:121:57)
-   ▸     at fulfilled (<project>/node_modules/tslib/tslib.js:111:62)
 🔥 should grow: \\"should grow\\" got worse. 😔
-   ▸
-   ▸ Error: \\"should grow\\" got worse. 😔
-   ▸     at <project>/packages/reporter/dist/components/Runs.js:1526:25
-   ▸     at step (<project>/node_modules/tslib/tslib.js:140:27)
-   ▸     at Object.next (<project>/node_modules/tslib/tslib.js:121:57)
-   ▸     at fulfilled (<project>/node_modules/tslib/tslib.js:111:62)
 
 ",
   "

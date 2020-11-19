@@ -44,7 +44,7 @@ export async function runTestPackageAPI(
   logger: BettererTaskLogger,
   packageName: string
 ): Promise<string | BettererTaskLog> {
-  logger.status(`Validating API for "@betterer/${packageName}" ...`);
+  logger.progress(`Validating API for "@betterer/${packageName}" ...`);
 
   const packageDeclarationPath = path.join(PACKAGES_DIR, packageName, BUILT_DECLARATION);
   const packageGoldenPath = path.join(GOLDENS_DIR, `${packageName}${DECLARATION_EXTENSION}`);

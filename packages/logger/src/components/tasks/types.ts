@@ -12,7 +12,7 @@ export type BettererTaskError = Error & {
   message: string;
 };
 
-export type BettererTaskUpdate = (status: string) => void;
+export type BettererTaskStatusUpdate = (status: string) => void;
 
 export type BettererTaskContext = {
   name: string;
@@ -20,5 +20,5 @@ export type BettererTaskContext = {
 };
 
 export type BettererTaskLogger = BettererLogger & {
-  status: BettererTaskUpdate;
+  progress: BettererTaskStatusUpdate;
 };

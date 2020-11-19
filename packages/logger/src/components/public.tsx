@@ -7,7 +7,7 @@ export {
   BettererTaskProps,
   BettererTaskLog,
   BettererTaskLogs,
-  BettererTaskUpdate,
+  BettererTaskStatusUpdate,
   BettererTasks,
   BettererTasksProps,
   BettererTasksState

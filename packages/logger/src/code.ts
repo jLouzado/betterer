@@ -6,7 +6,7 @@ import { BettererLoggerCodeInfo } from './types';
 
 const IS_JS_REGEXP = /.t|jsx?$/;
 
-export function code(codeInfo: BettererLoggerCodeInfo): string {
+export function codeΔ(codeInfo: BettererLoggerCodeInfo): string {
   const { filePath, fileText } = codeInfo;
   const isJS = IS_JS_REGEXP.exec(path.extname(filePath));
   const options = {

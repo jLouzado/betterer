@@ -64,18 +64,12 @@ Array [
  
 💥 Betterer: 1 test errored!
 🔥 regexp no hack comments: \\"regexp no hack comments\\" got worse. 😔
-   ▸ 1 existing issue in \\"<project>/fixtures/test-betterer-regexp/src/index.ts\\".
-   ▸ 1 new issue in \\"<project>/fixtures/test-betterer-regexp/src/index.ts\\":
-   ▸ RegExp match
-   ▸   1 | // HACK:
-   ▸ > 2 | // HACK:
-   ▸     | ^^^^^^^
-   ▸
-   ▸ Error: \\"regexp no hack comments\\" got worse. 😔
-   ▸     at <project>/packages/reporter/dist/components/Runs.js:1526:25
-   ▸     at step (<project>/node_modules/tslib/tslib.js:140:27)
-   ▸     at Object.next (<project>/node_modules/tslib/tslib.js:121:57)
-   ▸     at fulfilled (<project>/node_modules/tslib/tslib.js:111:62)
+  ▸ 1 existing issue in \\"<project>/fixtures/test-betterer-regexp/src/index.ts\\".
+  ▸ 1 new issue in \\"<project>/fixtures/test-betterer-regexp/src/index.ts\\":
+  ▸ RegExp match
+  ▸   1 | // HACK:
+  ▸ > 2 | // HACK:
+  ▸     | ^^^^^^^
 
 ",
   "

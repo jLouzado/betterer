@@ -31,7 +31,7 @@ export const Runs: FC<RunsProps> = function Runs({ runs }) {
         if (run.isExpired) {
           logger.warn(testExpiredΔ(name));
         }
-        logger.status(testRunningΔ(name));
+        logger.progress(testRunningΔ(name));
 
         await run.lifecycle;
 

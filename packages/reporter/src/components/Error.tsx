@@ -1,11 +1,13 @@
 import React, { FC } from 'react';
 
-import { BettererError, isBettererError, isErrorLike } from '@betterer/errors';
+import { BettererError, isBettererError } from '@betterer/errors';
 import { Box, Text } from 'ink';
 
 export type ErrorProps = {
   error: Error | BettererError;
 };
+
+let errorCount = 0;
 
 export const Error: FC<ErrorProps> = function Error({ error }) {
   if (!isBettererError(error)) {
@@ -16,7 +18,7 @@ export const Error: FC<ErrorProps> = function Error({ error }) {
       </>
     );
   }
-  const errors = error.details.filter((detail) => isErrorLike(detail)) as Array<Error | BettererError>;
+  const errors = error.details.filter((detail) => isError(detail)) as Array<Error | BettererError>;
   return (
     <>
       <Box>
@@ -24,9 +26,13 @@ export const Error: FC<ErrorProps> = function Error({ error }) {
         <Text> </Text>
         <Text>{error.message}</Text>
       </Box>
-      {errors.map((error, index) => (
-        <Error key={`${error.message}-${index}`} error={error} />
+      {errors.map((error) => (
+        <Error key={errorCount++} error={error} />
       ))}
     </>
   );
 };
+
+function isError(value: unknown): value is Error | BettererError {
+  return (value as Error).message != null && (value as Error).stack !== null;
+}

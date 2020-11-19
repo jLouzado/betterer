@@ -64,18 +64,12 @@ Array [
  
 💥 Betterer: 1 test errored!
 🔥 tsquery no raw console.log: \\"tsquery no raw console.log\\" got worse. 😔
-   ▸ 1 existing issue in \\"<project>/fixtures/test-betterer-tsquery/src/index.ts\\".
-   ▸ 1 new issue in \\"<project>/fixtures/test-betterer-tsquery/src/index.ts\\":
-   ▸ TSQuery match
-   ▸   1 | console.log('foo');
-   ▸ > 2 | console.log('foo');
-   ▸     | ^^^^^^^^^^^
-   ▸
-   ▸ Error: \\"tsquery no raw console.log\\" got worse. 😔
-   ▸     at <project>/packages/reporter/dist/components/Runs.js:1526:25
-   ▸     at step (<project>/node_modules/tslib/tslib.js:140:27)
-   ▸     at Object.next (<project>/node_modules/tslib/tslib.js:121:57)
-   ▸     at fulfilled (<project>/node_modules/tslib/tslib.js:111:62)
+  ▸ 1 existing issue in \\"<project>/fixtures/test-betterer-tsquery/src/index.ts\\".
+  ▸ 1 new issue in \\"<project>/fixtures/test-betterer-tsquery/src/index.ts\\":
+  ▸ TSQuery match
+  ▸   1 | console.log('foo');
+  ▸ > 2 | console.log('foo');
+  ▸     | ^^^^^^^^^^^
 
 ",
   "

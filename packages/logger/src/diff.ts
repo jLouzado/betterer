@@ -5,6 +5,6 @@ const DIFF_OPTIONS = {
   bAnnotation: 'Result'
 };
 
-export function diff<T>(expected: T, result: T): string | null {
+export function diffΔ<T>(expected: T, result: T): string | null {
   return logDiff(expected, result, DIFF_OPTIONS);
 }

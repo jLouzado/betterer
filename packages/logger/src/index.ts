@@ -1,6 +1,6 @@
 export { BettererConsoleLogger } from './console-logger';
-export { code } from './code';
-export { diff } from './diff';
+export { codeΔ } from './code';
+export { diffΔ } from './diff';
 export {
   BettererLogo,
   BettererTask,
@@ -10,7 +10,7 @@ export {
   BettererTaskProps,
   BettererTaskLog,
   BettererTaskLogs,
-  BettererTaskUpdate,
+  BettererTaskStatusUpdate,
   BettererTaskLogger,
   BettererTasks,
   BettererTasksProps,

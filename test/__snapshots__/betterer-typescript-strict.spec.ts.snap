@@ -67,21 +67,13 @@ Array [
  
 💥 Betterer: 1 test errored!
 🔥 typescript use strict mode: \\"typescript use strict mode\\" got worse. 😔
-   ▸ 6 existing issues in \\"<project>/fixtures/test-betterer-typescript-strict/src/index.ts\\".
-   ▸ 1 new issue in \\"<project>/fixtures/test-betterer-typescript-strict/src/index.ts\\":
-   ▸ The left-hand side of an arithmetic operation must be of type 'any', 'number', 'bigint' or an enum type.
-   ▸   32 | const a = 'a';
-   ▸   33 | const one = 1;
-   ▸ > 34 | console.log(a * one);
-   ▸      |             ^
-   ▸
-   ▸ Error: \\"typescript use strict mode\\" got worse. 😔
-   ▸     at <project>/packages/reporter/dist/components/Runs.js:1526:25
-   ▸     at step (<project>/node_modules/tslib/tslib.js:140:27)
-   ▸     at Object.next (<project>/node_modules/tslib/tslib.js:121:57)
-   ▸     at fulfilled (<project>/node_modules/tslib/tslib.js:111:62)
-   ▸     at runNextTicks (internal/process/task_queues.js:62:5)
-   ▸     at processTimers (internal/timers.js:489:9)
+  ▸ 6 existing issues in \\"<project>/fixtures/test-betterer-typescript-strict/src/index.ts\\".
+  ▸ 1 new issue in \\"<project>/fixtures/test-betterer-typescript-strict/src/index.ts\\":
+  ▸ The left-hand side of an arithmetic operation must be of type 'any', 'number', 'bigint' or an enum type.
+  ▸   32 | const a = 'a';
+  ▸   33 | const one = 1;
+  ▸ > 34 | console.log(a * one);
+  ▸      |             ^
 
 ",
   "

@@ -1,2 +1,2 @@
-export { BettererError, isBettererError, isErrorLike } from './error';
-export { BettererErrorDetail, BettererErrorDetails, ErrorLike } from './types';
+export { BettererError, isBettererError } from './error';
+export { BettererErrorDetail, BettererErrorDetails } from './types';

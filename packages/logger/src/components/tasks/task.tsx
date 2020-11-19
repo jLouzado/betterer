@@ -4,9 +4,9 @@ import { Box, Text } from 'ink';
 
 import { BettererTasksContext } from './state';
 import { BettererTaskStatus } from './status';
-import { BettererTaskContext, BettererTaskError, BettererTaskLog, BettererTaskLogs } from './types';
+import { BettererTaskContext, BettererTaskLog, BettererTaskLogs } from './types';
 import { BettererLoggerCodeInfo } from '../../types';
-import { code } from '../../code';
+import { codeΔ } from '../../code';
 
 export type BettererTaskProps = {
   context: BettererTaskContext;
@@ -21,55 +21,67 @@ export const BettererTask: FC<BettererTaskProps> = function BettererTask({ conte
 
   useEffect(() => {
     void (async () => {
-      let statusMessages: BettererTaskLogs = [];
+      let runLogMessages: BettererTaskLogs = [];
+      function addLogMessage(log: BettererTaskLog) {
+        runLogMessages = [...runLogMessages, log];
+        setLogMessages(runLogMessages);
+      }
+
+      function statusError(status: string): void {
+        setStatus(['🔥', 'redBright', status]);
+      }
+      function statusProgress(status: string): void {
+        setStatus(['🤔', 'whiteBright', status]);
+      }
+      function statusSuccess(status: string): void {
+        setStatus(['✅', 'greenBright', status]);
+      }
+
+      function logCode(codeInfo: BettererLoggerCodeInfo): void {
+        const { message } = codeInfo;
+        const codeFrame = codeΔ(codeInfo);
+        logInfo(message.trim());
+        addLogMessage(['💻', 'magentaBright', codeFrame]);
+      }
+      function logDebug(log: string): void {
+        addLogMessage(['🤯', 'blueBright', log]);
+      }
+      function logError(log: string): void {
+        addLogMessage(['🔥', 'redBright', log]);
+      }
+      function logInfo(log: string): void {
+        addLogMessage(['💭', 'gray', log]);
+      }
+      function logSuccess(log: string): void {
+        addLogMessage(['✅', 'greenBright', log]);
+      }
+      function logWarning(log: string): void {
+        addLogMessage(['🚨', 'yellowBright', log]);
+      }
+
       dispatch({ type: 'start' });
       try {
         const result = await run({
-          status(status: string) {
-            setStatus(['🤔', 'whiteBright', status]);
-          },
-          code(codeInfo: BettererLoggerCodeInfo): void {
-            const { message } = codeInfo;
-            const codeFrame = code(codeInfo);
-            this.info(message.trim());
-            statusMessages = [...statusMessages, ['💻', 'magentaBright', codeFrame]];
-            setLogMessages(statusMessages);
-          },
-          debug(status: string) {
-            statusMessages = [...statusMessages, ['🤯', 'blueBright', status]];
-            setLogMessages(statusMessages);
-          },
-          error(status: string) {
-            statusMessages = [...statusMessages, ['🔥', 'redBright', status]];
-            setLogMessages(statusMessages);
-          },
-          info(status: string) {
-            statusMessages = [...statusMessages, ['💭', 'gray', status]];
-            setLogMessages(statusMessages);
-          },
-          success(status: string) {
-            statusMessages = [...statusMessages, ['✅', 'greenBright', status]];
-            setLogMessages(statusMessages);
-          },
-          warn(status: string) {
-            statusMessages = [...statusMessages, ['🚨', 'yellowBright', status]];
-            setLogMessages(statusMessages);
-          }
+          progress: statusProgress,
+          code: logCode,
+          debug: logDebug,
+          error: logError,
+          info: logInfo,
+          success: logSuccess,
+          warn: logWarning
         });
 
         if (typeof result === 'string') {
-          setStatus(['✅', 'greenBright', result]);
+          statusSuccess(result);
         } else if (!result) {
-          setStatus(['✅', 'greenBright', 'done!']);
+          statusSuccess('done!');
         } else {
           setStatus(result);
         }
+
         dispatch({ type: 'stop' });
       } catch (error) {
-        const [status, ...logs] = errorMessages(error);
-        setStatus(status);
-        statusMessages = [...statusMessages, ...logs];
-        setLogMessages(statusMessages);
+        statusError((error as Error).message);
         dispatch({ type: 'error' });
         process.exitCode = 1;
       }
@@ -92,14 +104,9 @@ export const BettererTask: FC<BettererTaskProps> = function BettererTask({ conte
   );
 };
 
-function errorMessages(error: BettererTaskError): BettererTaskLogs {
-  const messages = [error.message, error.details, error.stack].filter(Boolean) as Array<string>;
-  return messages.map((message) => ['🔥', 'redBright', message]);
-}
-
 function prependLogBlock(log: BettererTaskLog): string {
   const [, colour, message] = log;
-  return prependBlock(message, chalk[colour]('   ▸'));
+  return prependBlock(message, chalk[colour]('  ▸'));
 }
 
 function prependBlock(message: string, block: string): string {

@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 
 import { BettererSummary } from '@betterer/betterer';
-import { diff } from '@betterer/logger';
+import { diffΔ } from '@betterer/logger';
 import { Box, Text } from 'ink';
 
 import {
@@ -40,16 +40,22 @@ export const Summary: FC<SummaryProps> = function Summary({ summary }) {
     <Box flexDirection="column" paddingY={1}>
       <Text color="gray">{testCheckedΔ(tests(ran))}</Text>
       {expired.map((run) => {
-        <Text color="brightRed">{testExpiredΔ(quoteΔ(run.name))})</Text>;
+        <Text key={`${run.name}-expired`} color="brightRed">
+          {testExpiredΔ(quoteΔ(run.name))})
+        </Text>;
       })}
       {failed ? <Text color="brightRed">{testFailedΔ(tests(failed))}</Text> : null}
       {neww ? <Text color="gray">{testNewΔ(tests(neww))}</Text> : null}
       {obsolete.map((runName) => {
-        <Text color="brightRed">{testObsoleteΔ(quoteΔ(runName))})</Text>;
+        <Text key={`${runName}-obsolete`} color="brightRed">
+          {testObsoleteΔ(quoteΔ(runName))})
+        </Text>;
       })}
       {better ? <Text color="greenBright">{testBetterΔ(tests(better))}</Text> : null}
       {completed.map((run) => {
-        <Text color="greenBright">{testCompleteΔ(quoteΔ(run.name))})</Text>;
+        <Text key={`${run.name}-completed`} color="greenBright">
+          {testCompleteΔ(quoteΔ(run.name))})
+        </Text>;
       })}
       {same ? <Text color="yellowBright">{testSameΔ(tests(same))}</Text> : null}
       {skipped ? <Text color="yellowBright">{testSkippedΔ(tests(skipped))}</Text> : null}
@@ -63,7 +69,7 @@ export const Summary: FC<SummaryProps> = function Summary({ summary }) {
       {summary.hasDiff ? (
         <>
           <Text color="red">{unexpectedDiffΔ()}</Text>
-          <Text>{diff(summary.expected, summary.result)}</Text>{' '}
+          <Text>{diffΔ(summary.expected, summary.result)}</Text>{' '}
         </>
       ) : null}
     </Box>

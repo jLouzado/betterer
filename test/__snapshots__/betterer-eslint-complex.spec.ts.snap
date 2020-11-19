@@ -64,19 +64,12 @@ Array [
  
 💥 Betterer: 1 test errored!
 🔥 eslint enable no-debugger rule: \\"eslint enable no-debugger rule\\" got worse. 😔
-   ▸ 1 existing issue in \\"<project>/fixtures/test-betterer-eslint-complex/src/index.ts\\".
-   ▸ 1 new issue in \\"<project>/fixtures/test-betterer-eslint-complex/src/index.ts\\":
-   ▸ Unexpected 'debugger' statement.
-   ▸   1 | debugger;
-   ▸ > 2 | debugger;
-   ▸     | ^^^^^^^^^
-   ▸
-   ▸ Error: \\"eslint enable no-debugger rule\\" got worse. 😔
-   ▸     at <project>/packages/reporter/dist/components/Runs.js:1526:25
-   ▸     at step (<project>/node_modules/tslib/tslib.js:140:27)
-   ▸     at Object.next (<project>/node_modules/tslib/tslib.js:121:57)
-   ▸     at fulfilled (<project>/node_modules/tslib/tslib.js:111:62)
-   ▸     at processTicksAndRejections (internal/process/task_queues.js:97:5)
+  ▸ 1 existing issue in \\"<project>/fixtures/test-betterer-eslint-complex/src/index.ts\\".
+  ▸ 1 new issue in \\"<project>/fixtures/test-betterer-eslint-complex/src/index.ts\\":
+  ▸ Unexpected 'debugger' statement.
+  ▸   1 | debugger;
+  ▸ > 2 | debugger;
+  ▸     | ^^^^^^^^^
 
 ",
   "
