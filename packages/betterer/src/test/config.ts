@@ -1,5 +1,5 @@
 import { BettererError } from '@betterer/errors';
-import { diffΔ } from '@betterer/logger';
+import { BettererLogger, diffΔ } from '@betterer/logger';
 
 import { BettererResultValue } from '../results';
 import { isFunction } from '../utils';
@@ -79,9 +79,11 @@ export function defaultDiffer(expected: number, result: number): BettererDiff<nu
     expected,
     result,
     diff: null,
-    log(): void {
-      // eslint-disable-next-line no-console
-      console.log(diffΔ(expected, result));
+    log(logger: BettererLogger): void {
+      const diff = diffΔ(expected, result);
+      if (diff) {
+        logger.error(diff);
+      }
     }
   };
 }
