@@ -1,6 +1,7 @@
 export { BettererConsoleLogger } from './console-logger';
 export { codeΔ } from './code';
 export { diffΔ } from './diff';
+export { LOGO } from './logo';
 export {
   BettererLogo,
   BettererTask,

@@ -1,5 +1,5 @@
 import { BettererFilePaths, BettererReporter, BettererRun, BettererRuns } from '@betterer/betterer';
-import { BettererConsoleLogger } from '@betterer/logger';
+import { BettererConsoleLogger, LOGO } from '@betterer/logger';
 import {
   quoteΔ,
   testBetterΔ,
@@ -73,14 +73,6 @@ function statusMessage(run: BettererRun): string {
   }
   throw new Error();
 }
-
-const LOGO = `
-   \\ | /     _         _   _                     
- '-.ooo.-'  | |__  ___| |_| |_ ___ _ __ ___ _ __ 
----ooooo--- | '_ \\/ _ \\ __| __/ _ \\ '__/ _ \\ '__|
- .-'ooo'-.  | |_)|  __/ |_| ||  __/ | |  __/ |   
-   / | \\    |_.__/\\___|\\__|\\__\\___|_|  \\___|_|   
- `;
 
 function overwriteΔ(content: string): typeof logUpdate['done'] {
   logUpdate(`${LOGO}${'\n'}${content}`);
