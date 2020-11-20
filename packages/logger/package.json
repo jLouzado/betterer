@@ -30,7 +30,6 @@
     "ink": "^3.0.7",
     "jest-diff": "^26.6.2",
     "lines-and-columns": "^1.1.6",
-    "log-update": "^4.0.0",
     "npmlog": "^4.1.2",
     "react": "^16.13.1",
     "tslib": "^2.0.3"

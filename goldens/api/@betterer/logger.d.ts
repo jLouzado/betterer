@@ -51,7 +51,7 @@ export declare type BettererTaskError = Error & {
 export declare type BettererTaskLog = [indicator: string, colour: BettererTaskColour, message: string];
 
 export declare type BettererTaskLogger = BettererLogger & {
-    status: BettererTaskUpdate;
+    progress: BettererTaskStatusUpdate;
 };
 
 export declare type BettererTaskLogs = ReadonlyArray<BettererTaskLog>;
@@ -73,4 +73,10 @@ export declare type BettererTasksState = {
     error: number;
 };
 
-export declare type BettererTaskUpdate = (status: string) => void;
+export declare type BettererTaskStatusUpdate = (status: string) => void;
+
+export declare function codeΔ(codeInfo: BettererLoggerCodeInfo): string;
+
+export declare function diffΔ<T>(expected: T, result: T): string | null;
+
+export declare const LOGO = "\n   \\ | /     _         _   _                     \n '-.ooo.-'  | |__  ___| |_| |_ ___ _ __ ___ _ __ \n---ooooo--- | '_ \\/ _ \\ __| __/ _ \\ '__/ _ \\ '__|\n .-'ooo'-.  | |_)|  __/ |_| ||  __/ | |  __/ |   \n   / | \\    |_.__/\\___|\\__|\\__\\___|_|  \\___|_|   \n ";

@@ -29,7 +29,6 @@ export class BettererRunΩ implements BettererRun {
   private _isComplete = false;
   private _isExpired = false;
   private _isRan = false;
-  private _lifecycle: Defer<void>;
 
   constructor(
     private readonly _reporter: BettererReporterΩ,
@@ -62,10 +61,6 @@ export class BettererRunΩ implements BettererRun {
 
   public get filePaths(): BettererFilePaths {
     return this._filePaths;
-  }
-
-  public get lifecycle(): Promise<void> {
-    return this._lifecycle.promise;
   }
 
   public get timestamp(): number {

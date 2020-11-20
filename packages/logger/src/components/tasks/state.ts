@@ -6,11 +6,11 @@ export type BettererTasksState = {
   error: number;
 };
 
-export type TasksAction = {
+export type BettererTasksAction = {
   type: 'start' | 'stop' | 'error';
 };
 
-export type BettererTasksContextType = Dispatch<TasksAction>;
+export type BettererTasksContextType = Dispatch<BettererTasksAction>;
 
 export const INITIAL_STATE: BettererTasksState = {
   running: 0,
@@ -20,7 +20,7 @@ export const INITIAL_STATE: BettererTasksState = {
 
 export const BettererTasksContext = createContext<BettererTasksContextType>(() => void 0);
 
-export function reducer(state: BettererTasksState, action: TasksAction): BettererTasksState {
+export function reducer(state: BettererTasksState, action: BettererTasksAction): BettererTasksState {
   switch (action.type) {
     case 'start':
       return { ...state, running: state.running + 1 };

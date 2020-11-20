@@ -15,6 +15,7 @@ import {
 import logUpdate from 'log-update';
 
 import { filesChecked, filesChecking, watchEnd, watchStart } from './messages';
+
 const logger = new BettererConsoleLogger();
 
 export const watchReporter: BettererReporter = {
@@ -25,7 +26,7 @@ export const watchReporter: BettererReporter = {
     logger.info(watchEnd());
   },
   runsStart(_: BettererRuns, files: BettererFilePaths): void {
-    overwriteΔ(filesChecking(files.length));
+    overwrite(filesChecking(files.length));
   },
   runsEnd(runs: BettererRuns, files: BettererFilePaths): void {
     let report = `  ${filesChecked(files.length)}:\n`;
@@ -38,7 +39,7 @@ export const watchReporter: BettererReporter = {
       report += `\n  ${status}`;
       return;
     });
-    overwriteΔ(report);
+    overwrite(report);
   }
 };
 
@@ -74,7 +75,7 @@ function statusMessage(run: BettererRun): string {
   throw new Error();
 }
 
-function overwriteΔ(content: string): typeof logUpdate['done'] {
+function overwrite(content: string): typeof logUpdate['done'] {
   logUpdate(`${LOGO}${'\n'}${content}`);
   return logUpdate.done.bind(logUpdate);
 }

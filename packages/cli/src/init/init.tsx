@@ -28,5 +28,5 @@ function statusMessage(state: BettererTasksState): string {
 }
 
 function tasks(n: number): string {
-  return n === 1 ? 'task' : 'tasks';
+  return `${n} ${n === 1 ? 'task' : 'tasks'}`;
 }

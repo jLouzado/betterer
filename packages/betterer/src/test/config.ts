@@ -1,6 +1,5 @@
 import { BettererError } from '@betterer/errors';
 import { BettererLogger, diffΔ } from '@betterer/logger';
-
 import { BettererResultValue } from '../results';
 import { isFunction } from '../utils';
 import {
