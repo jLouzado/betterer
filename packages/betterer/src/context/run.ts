@@ -21,6 +21,7 @@ enum BettererRunStatus {
 
 export class BettererRunΩ implements BettererRun {
   private _diff: BettererDiff | null = null;
+  private _lifecycle: Defer<void>;
   private _result: BettererResult | null = null;
   private _status: BettererRunStatus;
   private _timestamp: number | null = null;
@@ -45,6 +46,10 @@ export class BettererRunΩ implements BettererRun {
   public get diff(): BettererDiff {
     assert(this._diff);
     return this._diff;
+  }
+
+  public get lifecycle(): Promise<void> {
+    return this._lifecycle.promise;
   }
 
   public get name(): string {
