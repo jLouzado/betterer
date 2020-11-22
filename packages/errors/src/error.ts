@@ -2,6 +2,7 @@ import { BettererErrorDetails } from './types';
 
 export class BettererError extends Error {
   public details: BettererErrorDetails;
+  public isBettererError = true;
 
   public isBettererError = true;
 
