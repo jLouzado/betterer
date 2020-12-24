@@ -8,45 +8,106 @@ Array [
 ---ooooo--- | '_ // _ / __| __/ _ / '__/ _ / '__|
  .-'ooo'-.  | |_)|  __/ |_| ||  __/ | |  __/ |   
    / | /    |_.__//___|/__|/__/___|_|  /___|_|   
- ",
-  " ☀️  betterer  info  💬  - ",
-  "running \\"typescript use strict mode\\"!",
-  " ☀️  betterer  succ  ✅  - ",
-  "\\"typescript use strict mode\\" got checked for the first time! 🎉",
-  " ☀️  betterer  info  💬  - ",
-  "1 test got checked. 🤔",
-  " ☀️  betterer  info  💬  - ",
-  "1 test got checked for the first time! 🎉",
+ 
+
+",
+  "",
   "
    / | /     _         _   _                     
  '-.ooo.-'  | |__  ___| |_| |_ ___ _ __ ___ _ __ 
 ---ooooo--- | '_ // _ / __| __/ _ / '__/ _ / '__|
  .-'ooo'-.  | |_)|  __/ |_| ||  __/ | |  __/ |   
    / | /    |_.__//___|/__|/__/___|_|  /___|_|   
- ",
-  " ☀️  betterer  info  💬  - ",
-  "running \\"typescript use strict mode\\"!",
-  " ☀️  betterer  warn  🚨  - ",
-  "\\"typescript use strict mode\\" stayed the same. 😐",
-  " ☀️  betterer  info  💬  - ",
-  "1 test got checked. 🤔",
-  " ☀️  betterer  warn  🚨  - ",
-  "1 test stayed the same. 😐",
-  " ☀️  betterer  erro  🔥  - ",
-  "Unexpected diff found:",
-  "- Expected
-+ Result
+ 
 
-  // BETTERER RESULTS V2.
-  exports[\`typescript use strict mode\`] = {
-    value: \`{
--     \\"src/index.ts:1499252024\\": [
--       [2, 12, 1, \\"The left-hand side of an arithmetic operation must be of type /'any/', /'number/', /'bigint/' or an enum type.\\", \\"177604\\"]
-+     \\"src/index.ts:2615232350\\": [
-+       [3, 12, 1, \\"The left-hand side of an arithmetic operation must be of type /'any/', /'number/', /'bigint/' or an enum type.\\", \\"177604\\"]
-      ]
-    }\`
-  };
+",
+  "
+1 test got checked. 🤔
+1 test got checked for the first time! 🎉
+
+",
+  "
+   / | /     _         _   _                     
+ '-.ooo.-'  | |__  ___| |_| |_ ___ _ __ ___ _ __ 
+---ooooo--- | '_ // _ / __| __/ _ / '__/ _ / '__|
+ .-'ooo'-.  | |_)|  __/ |_| ||  __/ | |  __/ |   
+   / | /    |_.__//___|/__|/__/___|_|  /___|_|   
+ 
+
+",
+  "
+   / | /     _         _   _                     
+ '-.ooo.-'  | |__  ___| |_| |_ ___ _ __ ___ _ __ 
+---ooooo--- | '_ // _ / __| __/ _ / '__/ _ / '__|
+ .-'ooo'-.  | |_)|  __/ |_| ||  __/ | |  __/ |   
+   / | /    |_.__//___|/__|/__/___|_|  /___|_|   
+ 
+🎉 Betterer: 1 test done!
+✅ typescript use strict mode: \\"typescript use strict mode\\" stayed the same. 😐
+
+",
+  "
+",
+  "",
+  "
+",
+  "",
+  "
+",
+  "",
+  "
+",
+  "",
+  "
+",
+  "",
+  "
+",
+  "",
+  "
+",
+  "
+  ERROR  Text string \\" \\" must be rendered inside <Text> component
+
+ node_modules/ink/src/reconciler.ts:126:10
+
+ - createTextInstance (node_modules/ink/src/reconciler.ts:126:10)
+ - completeWork (node_modules/react-reconciler/cjs/react-reconciler.development.js:10915:40)
+ - completeUnitOfWork (node_modules/react-reconciler/cjs/react-reconciler.development.js:14728:16)
+ - performUnitOfWork (node_modules/react-reconciler/cjs/react-reconciler.development.js:14704:12)
+ - workLoopSync (node_modules/react-reconciler/cjs/react-reconciler.development.js:14669:22)
+ - performSyncWorkOnRoot (node_modules/react-reconciler/cjs/react-reconciler.development.js:14265:11)
+ -  (node_modules/react-reconciler/cjs/react-reconciler.development.js:1931:24)
+ - unstable_runWithPriority (node_modules/scheduler/cjs/scheduler.development.js:697:12)
+ - runWithPriority (node_modules/react-reconciler/cjs/react-reconciler.development.js:1881:10)
+ - flushSyncCallbackQueueImpl (node_modules/react-reconciler/cjs/react-reconciler.development.js:1926:7)
+ - flushSyncCallbackQueue (node_modules/react-reconciler/cjs/react-reconciler.development.js:1914:3)
+ - scheduleUpdateOnFiber (node_modules/react-reconciler/cjs/react-reconciler.development.js:13704:9)
+ - Object.updateContainer (node_modules/react-reconciler/cjs/react-reconciler.development.js:17101:3)
+ - Ink.render (node_modules/ink/src/ink.tsx:183:14)
+ - Object.render (node_modules/ink/src/render.ts:90:11)
+ - Object.contextEnd (packages/reporter/dist/reporter.js:342:11)
+ -  (packages/betterer/dist/reporters/reporter.js:2966:49)
+ -     at Array.map (<anonymous>)
+ - BettererReporterΩ.<anonymous> (packages/betterer/dist/reporters/reporter.js:2950:43)
+ - step (node_modules/tslib/tslib.js:140:27)
+ - Object.next (node_modules/tslib/tslib.js:121:57)
+ -  (node_modules/tslib/tslib.js:114:75)
+ -     at new Promise (<anonymous>)
+ - Object.__awaiter (node_modules/tslib/tslib.js:110:16)
+ - BettererReporterΩ.contextEnd (packages/betterer/dist/reporters/reporter.js:2934:20)
+ - BettererContextΩ.<anonymous> (packages/betterer/dist/context/context.js:3620:30)
+ - step (node_modules/tslib/tslib.js:140:27)
+ - Object.next (node_modules/tslib/tslib.js:121:57)
+ -  (node_modules/tslib/tslib.js:114:75)
+ -     at new Promise (<anonymous>)
+ - Object.__awaiter (node_modules/tslib/tslib.js:110:16)
+ - BettererContextΩ.end (packages/betterer/dist/context/context.js:3595:20)
+ - Object.<anonymous> (packages/betterer/dist/betterer.js:1992:23)
+ - step (node_modules/tslib/tslib.js:140:27)
+ - Object.next (node_modules/tslib/tslib.js:121:57)
+ - fulfilled (node_modules/tslib/tslib.js:111:62)
+
 ",
 ]
 `;

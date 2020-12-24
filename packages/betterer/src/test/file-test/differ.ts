@@ -155,29 +155,31 @@ export function differ(expected: BettererFileTestResult, result: BettererFileTes
     expected,
     result,
     diff,
-    log(logger: BettererLogger) {
-      filePaths.forEach((filePath) => {
+    async log(logger: BettererLogger): Promise<void> {
+      await filePaths.reduce(async (p, filePath) => {
+        await p;
         const existing = diff[filePath].existing || [];
         const fixed = diff[filePath].fixed || [];
         if (fixed?.length) {
-          logger.success(`${fixed.length} fixed ${getIssues(fixed.length)} in "${filePath}".`);
+          await logger.success(`${fixed.length} fixed ${getIssues(fixed.length)} in "${filePath}".`);
         }
         if (existing?.length) {
-          logger.warn(`${existing.length} existing ${getIssues(existing.length)} in "${filePath}".`);
+          await logger.warn(`${existing.length} existing ${getIssues(existing.length)} in "${filePath}".`);
         }
         const newIssues = diff[filePath].new || [];
         if (newIssues.length) {
           const { length } = newIssues;
-          logger.error(`${length} new ${getIssues(length)} in "${filePath}":`);
+          await logger.error(`${length} new ${getIssues(length)} in "${filePath}":`);
 
-          newIssues.forEach((issue) => {
+          await newIssues.reduce(async (p, issue) => {
+            await p;
             const fileΩ = resultΩ.getFile(filePath) as BettererFileΩ;
             const { fileText } = fileΩ;
             const { line, column, length, message } = issue;
-            logger.code({ message, filePath, fileText, line, column, length });
-          });
+            await logger.code({ message, filePath, fileText, line, column, length });
+          }, Promise.resolve());
         }
-      });
+      }, Promise.resolve());
     }
   };
 }

@@ -3,6 +3,8 @@ export { codeΔ } from './code';
 export { diffΔ } from './diff';
 export { LOGO } from './logo';
 export {
+  BettererErrors,
+  BettererErrorsProps,
   BettererLogo,
   BettererTask,
   BettererTaskColour,
@@ -12,15 +14,20 @@ export {
   BettererTaskLog,
   BettererTaskLogs,
   BettererTaskStatusUpdate,
+  BettererTaskStatusUpdateAsync,
   BettererTaskLogger,
+  BettererTaskLoggerAsync,
   BettererTasks,
   BettererTasksProps,
   BettererTasksState
 } from './components/public';
 export {
   BettererLogger,
+  BettererLoggerAsync,
   BettererLogMessage,
+  BettererLogMessageAsync,
   BettererLogCode,
+  BettererLogCodeAsync,
   BettererLoggerCodeInfo,
   BettererLoggerMessages
 } from './types';

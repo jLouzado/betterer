@@ -39,10 +39,6 @@ export function updateInstructionsΔ(): string {
   return `Run \`betterer --update\` to force an update of the results file. 🆙`;
 }
 
-export function getTestsΔ(count: number): string {
-  return `${count} ${count === 1 ? 'test' : 'tests'}`;
-}
-
 export function unexpectedDiffΔ(): string {
   return 'Unexpected diff found:';
 }

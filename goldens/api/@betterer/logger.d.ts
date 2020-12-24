@@ -8,6 +8,12 @@ export declare class BettererConsoleLogger implements BettererLogger {
     code(codeInfo: BettererLoggerCodeInfo): void;
 }
 
+export declare const BettererErrors: FC<BettererErrorsProps>;
+
+export declare type BettererErrorsProps = {
+    error: Error | BettererError;
+};
+
 export declare type BettererLogCode = (codeInfo: BettererLoggerCodeInfo) => void;
 
 export declare type BettererLogger = {
@@ -72,6 +78,7 @@ export declare type BettererTasksState = {
     done: number;
     errors: number;
     error: Error | null;
+    startTime: number;
 };
 
 export declare type BettererTaskStatusUpdate = (status: string) => void;
