@@ -6,7 +6,7 @@ const TEMPLATE = `export default {
   // Add tests here ☀️
 };`;
 
-export async function runCreateTestFile(logger: BettererTaskLoggerAsync, configPath: string): Promise<void> {
+export async function run(logger: BettererTaskLoggerAsync, configPath: string): Promise<void> {
   await logger.progress(`creating "${configPath}" file...`);
 
   let exists = false;

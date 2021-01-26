@@ -5,7 +5,7 @@ import { promises as fs } from 'fs';
 
 import { BettererPackageJSON } from '../types';
 
-export async function runUpdatePackageJSON(logger: BettererTaskLoggerAsync, cwd: string): Promise<void> {
+export async function run(logger: BettererTaskLoggerAsync, cwd: string): Promise<void> {
   await logger.progress('adding "betterer" to package.json file...');
 
   let packageJSON;

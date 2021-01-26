@@ -23,8 +23,6 @@ export type BettererTaskContext = {
 export type BettererTaskLogger = BettererLogger & {
   progress: BettererTaskStatusUpdate;
 };
-
 export type BettererTaskLoggerAsync = BettererLoggerAsync & {
   progress: BettererTaskStatusUpdateAsync;
 };
-

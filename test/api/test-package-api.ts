@@ -33,11 +33,8 @@ export async function getPackages(): Promise<Array<string>> {
   });
 }
 
-export async function runTestPackageAPI(
-  logger: BettererTaskLoggerAsync,
-  packageName: string
-): Promise<string | BettererTaskLog> {
-  await logger.progress(`Validating API for "@betterer/${packageName}"...`);
+export async function run(logger: BettererTaskLoggerAsync, packageName: string): Promise<string | BettererTaskLog> {
+  await logger.progress(`Validating API for "@betterer/${packageName}" ...`);
 
   const packageDeclarationPath = path.join(PACKAGES_DIR, packageName, BUILT_DECLARATION);
   const packageGoldenPath = path.join(GOLDENS_DIR, `${packageName}${DECLARATION_EXTENSION}`);

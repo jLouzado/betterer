@@ -5,10 +5,8 @@ import React, { FC } from 'react';
 
 import { BettererCLIInitConfig } from '../types';
 
-const { runCreateTestFile } = workerRequire<WorkerModule<typeof import('./create-test-file')>>('./create-test-file');
-const { runUpdatePackageJSON } = workerRequire<WorkerModule<typeof import('./update-package-json')>>(
-  './update-package-json'
-);
+const createTestFile = workerRequire<WorkerModule<typeof import('./create-test-file')>>('./create-test-file');
+const updatePackageJSON = workerRequire<WorkerModule<typeof import('./update-package-json')>>('./update-package-json');
 
 export type InitProps = BettererCLIInitConfig & {
   cwd: string;
@@ -20,13 +18,19 @@ export const Init: FC<InitProps> = function Init({ cwd, config }) {
       <BettererTask
         context={{
           name: 'Create test file',
-          run: (logger) => runCreateTestFile(logger, path.resolve(cwd, config))
+          run: async (logger) => {
+            await createTestFile.run(logger, path.resolve(cwd, config));
+            createTestFile.destroy();
+          }
         }}
       />
       <BettererTask
         context={{
           name: 'Update package.json',
-          run: (logger) => runUpdatePackageJSON(logger, cwd)
+          run: async (logger) => {
+            await updatePackageJSON.run(logger, cwd);
+            updatePackageJSON.destroy();
+          }
         }}
       />
     </BettererTasks>

@@ -23,5 +23,8 @@
   "scripts": {
     "compile": "tsc -b .",
     "api": "ts-api-guardian --out ../../goldens/api/@betterer/errors.d.ts dist/index.d.ts"
+  },
+  "engines": { 
+    "node": ">=12"
   }
 }

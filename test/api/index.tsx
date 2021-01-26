@@ -3,16 +3,14 @@ import { workerRequire, WorkerModule } from '@phenomnomnominal/worker-require';
 import { render } from 'ink';
 import React, { FC, useEffect, useState } from 'react';
 
-const { runTestPackageAPI, getPackages } = workerRequire<WorkerModule<typeof import('./test-package-api')>>(
-  './test-package-api'
-);
+const testPackageApi = workerRequire<WorkerModule<typeof import('./test-package-api')>>('./test-package-api');
 
 export const APITest: FC = function APITest() {
   const [packageNames, setPackageNames] = useState<Array<string>>([]);
 
   useEffect(() => {
     void (async () => {
-      const packageNames = await getPackages();
+      const packageNames = await testPackageApi.getPackages();
       setPackageNames(packageNames);
     })();
   }, []);
@@ -24,7 +22,10 @@ export const APITest: FC = function APITest() {
           key={packageName}
           context={{
             name: packageName,
-            run: (logger) => runTestPackageAPI(logger, packageName)
+            run: async (logger) => {
+              await testPackageApi.run(logger, packageName);
+              testPackageApi.destroy();
+            }
           }}
         />
       ))}
