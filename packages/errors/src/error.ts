@@ -4,8 +4,6 @@ export class BettererError extends Error {
   public details: BettererErrorDetails;
   public isBettererError = true;
 
-  public isBettererError = true;
-
   constructor(message: string, ...details: BettererErrorDetails) {
     super(message);
 

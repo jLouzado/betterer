@@ -78,10 +78,10 @@ export const Runs: FC<RunsProps> = function Runs({ runs }) {
 };
 
 function statusMessage(state: BettererTasksState): string {
-  const { done, error, running } = state;
+  const { done, errors, running } = state;
   const runningStatus = running ? `${tests(running)} running... ` : '';
   const doneStatus = done ? `${tests(done)} done! ` : '';
-  const errorStatus = error ? `${tests(error)} errored! ` : '';
+  const errorStatus = errors ? `${tests(errors)} errored! ` : '';
   return `${runningStatus}${doneStatus}${errorStatus}`;
 }
 
