@@ -1,4 +1,4 @@
-import { Box } from 'ink';
+import { Box, useApp } from 'ink';
 import React, { FC, useCallback, useEffect, useReducer, useState } from 'react';
 
 import { INITIAL_STATE, reducer, BettererTasksContext, BettererTasksState } from './state';
@@ -11,7 +11,9 @@ export type BettererTasksProps = {
 };
 
 export const BettererTasks: FC<BettererTasksProps> = function BettererTask({ children, name, statusMessage }) {
-  const fomatter = Intl.NumberFormat();
+  const app = useApp();
+  const formatter = Intl.NumberFormat();
+
   const [state, dispatch] = useReducer(reducer, INITIAL_STATE);
   const [time, setTime] = useState(0);
 
@@ -35,12 +37,13 @@ export const BettererTasks: FC<BettererTasksProps> = function BettererTask({ chi
     status = ['💥', 'redBright', result];
   } else if (running === 0 && shouldExit) {
     status = ['🎉', 'greenBright', result];
+    setImmediate(app.exit);
   }
 
   return (
     <BettererTasksContext.Provider value={dispatch}>
       <Box flexDirection="column">
-        <BettererTaskStatus name={`${name} (${fomatter.format(time)}ms)`} status={status} />
+        <BettererTaskStatus name={`${name} (${formatter.format(time)}ms)`} status={status} />
         {children}
       </Box>
     </BettererTasksContext.Provider>

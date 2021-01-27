@@ -94,8 +94,8 @@ export declare type BettererTasksState = {
     running: number;
     done: number;
     errors: number;
-    error: Error | null;
     startTime: number;
+    shouldExit: boolean;
 };
 
 export declare type BettererTaskStatusUpdate = (status: string) => void;

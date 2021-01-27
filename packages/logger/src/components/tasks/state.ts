@@ -4,7 +4,6 @@ export type BettererTasksState = {
   running: number;
   done: number;
   errors: number;
-  error: Error | null;
   startTime: number;
   shouldExit: boolean;
 };
@@ -18,7 +17,6 @@ export type BettererTasksAction =
     }
   | {
       type: 'error';
-      error: Error;
     };
 
 export type BettererTasksContextType = Dispatch<BettererTasksAction>;
@@ -27,7 +25,6 @@ export const INITIAL_STATE: BettererTasksState = {
   running: 0,
   done: 0,
   errors: 0,
-  error: null,
   startTime: Date.now(),
   shouldExit: false
 };
@@ -37,13 +34,25 @@ export const BettererTasksContext = createContext<BettererTasksContextType>(() =
 export function reducer(state: BettererTasksState, action: BettererTasksAction): BettererTasksState {
   switch (action.type) {
     case 'start':
-      return { ...state, running: state.running + 1 };
+      return {
+        ...state,
+        running: state.running + 1
+      };
     case 'stop': {
-      const newState = { ...state, running: state.running - 1, done: state.done + 1 };
+      const newState = {
+        ...state,
+        running: state.running - 1,
+        done: state.done + 1
+      };
       return getShouldExit(newState);
     }
     case 'error': {
-      const newState = { ...state, running: state.running - 1, done: state.done + 1 };
+      const newState = {
+        ...state,
+        running: state.running - 1,
+        done: state.done + 1,
+        errors: state.errors + 1
+      };
       return getShouldExit(newState);
     }
     default:
